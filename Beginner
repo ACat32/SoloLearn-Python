@@ -1,0 +1,222 @@
+Basic Concepts
+
+Python Practice 1.2 - Getting Started
+print ("Python is awesome!")
+
+Python Practice 2.2 -Practice
+print((18*3)+(7*1))
+
+Python Practice 3.2 - Do The Math
+print((5+6)*57.3)
+
+Python Practice 4.2 - Exponentiation
+print(4**5)
+
+Python Code Project 6 - Flight Time
+print(7425/550)
+/////////////////////////////////////////////////
+
+Strings
+
+Python Practice 7.2 - Output the String
+print('I\'m learning Python. It\'s easy.')
+
+Python Practice 8.2 - New Lines
+print('''
+A
+B
+C
+D''')
+
+Python Practice 9.2 - Hey There
+print('hi'*42)
+
+Python Code Project 11 - Leaderboard
+print('''
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+9.''')
+//////////////////////////////////////////////////
+
+Variables
+
+Python Practice 13.2 - Value of the Variable
+num = 7
+num=7**3
+print(num)
+
+Python Practice 14.2 - Desired Output
+x = input()
+print(x*10)
+
+Python Practice 15.2 - Convert the Input
+x=str(input())
+y=int(input())
+z=x*y
+print(z)
+
+Python Code Project 18 - Tip Calculator
+bill = int(input())
+#your code goes here
+tip = 20/100
+print(float(bill)*tip)
+//////////////////////////////////////////////////
+
+Control Flow
+
+Python Practice 20.2 - At the Boiling Point
+temp = int(input())
+if temp >= 100:
+    print("Boiling")
+    
+Python Practice 21.2 - Face Control
+age = int(input())
+if age >= 18:
+    print('Allowed')
+else:
+    print('Sorry')
+    
+Python Practice 22.2 - Age Groups
+age = int(input())
+if age <= 11:
+    print('Child')
+elif age <= 17:
+    print('Teen')
+else:
+    print('Adult')
+    
+Python Practice 23.2 - Call it Even
+x = 0
+while x<=10:
+  if x%2 == 0:
+    print(x)
+  x+=1
+  
+Python Practice 24.2 - Ticket Prices
+total = 0
+passenger = 0
+while passenger < 5:
+   age=int(input())
+   passenger +=1
+   if age <= 3:
+      continue 
+   elif age>3:
+      ticket = 100
+      total  += ticket
+print(total)
+
+Python Code Project 26 - BMI Calculator
+weight = int(input())
+height = float(input())
+BMI = weight/(height**2)
+if (BMI > 0):
+    if (BMI < 18.5):
+        print('Underweight')
+    elif (BMI <25):
+        print('Normal')
+    elif (BMI <30):
+        print('Overweight')
+    else:
+        print('Obesity')
+//////////////////////////////////////////////////
+
+Lists
+
+Python Practice 27.2 - Strings
+#Print the third character
+program = str(input())
+print(program[2])
+
+Python Practice 28.2 - Bingo
+#print bingo if input is in list
+x = [42, 8, 7, 1, 0, 124, 8897, 555, 3, 67, 99]
+num = int(input())
+if num in x:
+    print('bingo')
+    
+Python Practice 29.2 - List of Numbers
+#sum a list
+x = [42, 8, 7, 1, 0, 124, 8897, 555, 3, 67, 99]
+total = 0
+for n in x:
+    total += n
+print(total)
+
+Python Practice 30.2 - Date Picker
+#convert a range to a list
+a = int(input())
+b = int(input())
+numbers = list(range(a,b))
+print(numbers)
+
+Python Practice 31.2 - The Last Character
+#call the last character
+a = str(input())
+x = a[-1]
+print(x)
+
+Python Code Project 33 - Sum of Consecutive Numbers
+#sum all numbers 1 to input()
+N = int(input())
+#your code goes here
+A = sum(range(0,N+1))
+print(A)
+/////////////////////////////////////////////////
+
+Python Practice 35.2 - Queue Management
+queue = ['John', 'Amy', 'Bob', 'Adam']
+input = str(input())
+queue.append(input)
+print(queue)
+
+Python Practice 36.2 - Broken Keyboard
+#replace # with a space
+msg = input()
+clean = msg.replace('#',' ')
+print(clean)
+
+Python Practice 37.2 - Welcome, Sololearner!
+#define a basic function
+user = str(input())
+def welcome():
+   print("Welcome,", user)
+welcome()
+
+Python Practice 38.2 - Call the Function
+#call the function
+def printBill(text):
+  print("======")
+  print(text)
+  print("======")
+
+text = str(input())
+printBill(text)
+
+Python Practice 39.2 - Area of a Rectangle
+#function to find the area
+def width(x,y):
+   print(x*y)
+
+w = int(input())
+h = int(input())
+
+width(w,h)
+
+Python Code Project 42 - Search Engine
+#find matching words in a text
+text = input()
+word = input()
+
+def search(text, found):
+    if word in text:
+        return('Word found')
+    else:
+         return('Word not found')
+print(search(text, word))
+/////////////////////////////////////////////////
