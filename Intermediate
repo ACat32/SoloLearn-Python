@@ -1,0 +1,436 @@
+Intermediate Python
+
+Collection Types
+
+Python Practice 2.2 - Car Data
+#navigate a dictionary with keys
+car = {
+    'brand':'BMW',
+    'year': 2018,
+    'color': 'red',
+    'mileage': 15000
+}
+info = input()
+print(car.get(info))
+
+Python Practice 3.2 - National Economic Freedom
+#comb through a dict with .get()
+data = {
+    'Singapore': 1,
+    'Ireland': 6,
+    'United Kingdom': 7,
+    'Germany': 27,
+    'Armenia': 34,
+    'United States': 17,
+    'Canada': 9,
+    'Italy': 74
+}
+country = input()
+if country not in data:
+    print('Not found')
+else:
+    print(data[country])
+    
+Python Practice 4.2 - Contact Search
+#unpack a tuple
+contacts = [
+    ('James', 42),
+    ('Amy', 24),
+    ('John', 31),
+    ('Amanda', 63),
+    ('Bob', 18)
+]
+name = input()
+
+for x in contacts:
+    if name in x:
+        print(str(x[0]) + ' is ' + str(x[1]))
+        break
+else:
+    print('Not found')
+
+Python Practice 5.2 - Square Up
+#using tuples to calculate perim and area
+def calc(x):
+    return (x*4, x**2) 
+side = int(input())
+p, a = calc(side)
+print("Perimeter: " + str(p))
+print("Area: " + str(a))
+
+Python Practice 6.2 - You Are Qualified
+#combine sets to find the matching components
+skills = {'Python', 'HTML', 'SQL', 'C++', 'Java', 'Scala'}
+job_skills = {'HTML', 'CSS', 'JS', 'C#', 'NodeJS'}
+match = list(skills & job_skills)
+print(match[0])
+
+Python Practice 7.2 - Ignore The Vowels
+#skip vowels in a list
+word = input()
+vowels = ['a','e','i','o','u']
+constanants = [x for x in word if x not in vowels]
+print(constanants)
+
+Code Project 10 - Letter Counter
+#count all letters in a given text
+text = input()
+dict = {}
+count = 0
+
+for letter in text:
+    if letter in dict:
+        dict[letter] += 1
+    else:
+        dict[letter] = 1
+print(dict)
+///////////////////////////////////////////////////////////////////
+
+Functional Programing
+
+Python Practice 12.2 - How Much?
+#percent of a price using lambda
+price = int(input())
+perc = int(input())
+perc = perc*0.01
+res = (lambda x,y:x*y)(price, perc)
+print(res)
+
+Python Practice 13.2 - Getting A Raise!
+#use map to apply the raise to all salaries
+salaries = [2000, 1800, 3100, 4400, 1500]
+bonus = int(input())
+salaries = list(map(lambda x: x + bonus, salaries))
+print(salaries)
+
+Python Practice 13.3 - Animal Lifetimes
+#find what animals live longer than the input
+ages = [3, 1, 9, 0.4, 7, 12, 2, 1.7, 5.7, 42, 6.7, 14.5, 21]
+num = int(input())
+print(len(list(filter(lambda x: x>num, ages))))
+
+Python Practice 14.2 - Generating...
+#find primes btwn two points with generators
+def isPrime(x):
+    if x < 2:
+        return False
+    elif x == 2:
+        return True  
+    for n in range(2, x):
+        if x % n ==0:
+            return False
+    return True
+
+def primeGenerator(a, b):
+    for number in range(a, b):
+        if isPrime(number):
+            yield number
+
+f = int(input())
+t = int(input())
+print(list(primeGenerator(f, t)))
+
+Python Practice 15.2 - Collecting Reports
+#making an invoice decorator
+def decor(func):
+    def wrap(num):
+        print('***')
+        func(num)
+        print('***')
+        print('END OF PAGE')
+    return wrap
+
+@decor
+def invoice(num):
+    print("INVOICE #" +num)
+invoice(input())
+
+Python Practice 16.2 - Decimal To Binary
+#recursive function to convert to binary
+def convert(num): 
+   if num == 0:
+      return 0
+   return (num % 2 + 10 * convert(num // 2)) 
+
+number = int(input())
+print(convert(number))
+
+Python Practice 17.2 - Making It Work
+#use *args to increse inputs
+def my_min(*args):
+    return min(*args)
+
+print(my_min(8, 13, 4, 42, 120, 7))
+
+Code Project 19 - Spelling Backwords
+#recursion to invert a string
+def spell(txt):
+    if txt == "":
+        return txt
+    else:
+        print(txt[::-1])
+
+txt = input()
+spell(txt)
+////////////////////////////////////////////////////////////////////
+
+OOP
+
+Python Practice 20.2 - Game Over
+#creating name and level of a character
+class Player:
+    def __init__(self, name, level):
+        self.name = name
+        self.level = level
+
+    def intro(self):
+        print(self.name + " (Level " + self.level + ")")
+
+name = input()
+level = input()
+
+character = Player(name, level)
+character.intro()
+
+Python Practice 21.2 - Fine Art
+#rectangle inherits shape attributes
+class Shape: 
+    def __init__(self, w, h):
+        self.width = w
+        self.height = h
+
+    def area(self):
+        print(self.width*self.height)
+
+class Rectangle(Shape):
+    def __init__(self, w, h):
+        self.width = w
+        self.height = h
+
+    def perimeter(self):
+        print(2*(w+h))
+        
+w = int(input())
+h = int(input())
+
+r = Rectangle(w, h)
+r.area()
+r.perimeter()
+
+Python Practice 22.2 - Shape Factory
+#add and compare 2 shape objects
+class Shape: 
+    def __init__(self, w, h):
+        self.width = w
+        self.height = h
+
+    def area(self):
+        return self.width*self.height
+
+     def __add__(self, other):
+        return Shape(self.width + other.width , self.height + other.height)
+
+    def __gt__(self, other):
+        return self.area() > other.area()
+
+w1 = int(input())
+h1 = int(input())
+w2 = int(input())
+h2 = int(input())
+
+s1 = Shape(w1, h1)
+s2 = Shape(w2, h2)
+result = s1 + s2
+
+print(result.area())
+print(s1 > s2)
+
+Python Practice 23.2 - Preservation
+#lives are a hidden class
+class Player:
+    def __init__(self, name, lives):
+        self.name = name
+        self._lives = lives
+
+    def hit(self):
+        self._lives -= 1
+        if self._lives == 0:
+            print('Game Over')            
+
+p = Player("Cyberpunk77", 3)
+p.hit()
+p.hit()
+p.hit()
+
+Python Practice 24.2 - Define The Methods
+#using the static method
+class Shape:
+    def __init__(self, width, height):
+        self.width = w
+        self.height = h
+
+    @staticmethod
+    def area(w,h):
+        return w*h
+
+w = int(input())
+h = int(input())
+
+print(Shape.area(w, h))
+
+Python Practice 25.2 - Staying Alive
+#using a continuous loop to define alive vs dead
+class Player:
+    def __init__(self, name, lives):
+        self.name = name
+        self._lives = lives
+
+    def hit(self):
+        self._lives -= 1
+    
+    @property
+    def isAlive(self):
+        if self._lives > 0:
+            return True
+
+p = Player("Cyberpunk77", int(input()))
+i = 1
+while True:
+    p.hit()
+    print("Hit # " + str(i))
+    i += 1
+    if not p.isAlive:
+        print("Game Over")
+        break
+
+Code Project 27 - Shooting Game
+#a mini text-based FPS
+class Enemy:
+  name = ""
+  lives = 0
+  def __init__(self, name, lives):
+    self.name = name
+    self.lives = lives
+
+  def hit(self):
+    self.lives -= 1
+    if self.lives <= 0:
+       print(self.name + ' killed')
+    else:
+        print(self.name + ' has '+ str(self.lives) + ' lives')
+
+class Monster(Enemy):
+  def __init__(self):
+    super().__init__('Monster', 3)
+
+class Alien(Enemy):
+  def __init__(self):
+    super().__init__('Alien', 5)
+
+
+m = Monster()
+a = Alien()
+
+while True:
+    x = input()
+    if x == 'exit':
+        break
+    elif x == 'gun':
+      m.hit()
+    elif x == 'laser':
+      a.hit()
+///////////////////////////////////////////////////////////////////////
+
+Exceptions
+
+Python Practice 29.2 - Cash Out
+#ATM withdrawl handling of errors
+def withdraw(amount):
+   print(str(amount) + " withdrawn!")
+
+amount = input()
+try:
+   withdraw(int(amount))
+except ValueError:
+   print('Please enter a number')
+
+Python Practice 30.2 - Chef's Kiss
+#digital ordering handing errors
+menu = ['Fries', 'Sandwich', 'Cheeseburger', 'Coffee', 'Soda']
+
+try:
+    order = int(input())
+    print(menu[order])
+    print('Thanks for your order')
+except:
+    print('Item not found')
+    
+Python Practice 31.2 - Say Something
+#keep your tweets under 42 characters
+tweet = input()
+
+try:
+    if len(tweet) > 42:
+        raise exception
+except:
+    print("Error")
+else:
+    print("Posted")
+    
+Code Project 33 - Registration System
+#username registration must be greater than 4 characters
+try:
+    name = input()
+    count = 0
+    for x in str(name):
+        count += 1
+
+    if count > 3:
+        print("Account Created")
+    else:
+        raise exception
+except:
+    print("Invalid Name")
+///////////////////////////////////////////////////////////////////////
+
+Working With Files
+
+Python Practice 35.2 - Reading Through
+#read the first n numbers of a file
+file = open("/usercode/files/books.txt")
+N = int(input())
+characters = file.read()
+print(characters[:N])
+file.close
+
+Python Practice 36.2 - Filling Up With Numbers
+#write numbers 1 to n in a file, read to check
+n = int(input())
+
+file = open("numbers.txt", "w+")
+for i in range(1,n+1):
+    file.write(str(i)+ "")
+file.close()
+
+f = open("numbers.txt", "r")
+print(f.read())
+f.close()
+
+Python Practice 37.2
+#count the number of words in each line
+with open("/usercode/files/books.txt") as f:
+   line=1
+   for title in f:
+      print('Line ' + str(line) + ': ' + str(len(title.split(' '))) + ' words')
+      line+=1
+ 
+Code Project 39 - Title Encoder
+#encode book titles in a file
+file = open("/usercode/files/books.txt", "r")
+titles = file.readlines()
+for line in titles:
+    words = line.split()
+    for word in words:
+        print(word[0],end="")
+    print()
+file.close()
