@@ -1,0 +1,896 @@
+Python Core
+
+Basic Concepts
+
+Python Practice 1.2 - Your First Program
+print('Python is fun')
+
+Python Practice 2.2 - Brain Freeze
+print(2*68)
+
+Python Practice 5.2 - How Many Miles
+km = 1000
+mi = 1.6
+print(km//mi)
+
+Python Practice 5.3 - Sorting Out
+toys = 142
+boxes = 15
+print(toys%boxes)
+
+Python Practice 5.4 - Textbooks to Students
+books_needed = 37*2
+remainder = 76%books_needed
+print(remainder)
+
+Code Project 7 - Exponentiation
+#one penny doubled everyday for 30 days
+doubling = 0.01*2**30
+print(doubling)
+///////////////////////////////////////////////////////////////////
+
+Strings & Variables
+
+Python Practice 8.2 - I Code
+print('I\'m a programmer')
+
+Python Practice 8.3 - Find The Bug
+print('I\'m learning Python!')
+print("A number enclosed in double quotes: \"42\"")
+
+Python Practice 9.2 - More Lines, More Better
+#print on seperate lines
+print("""
+A
+B
+C
+D""")
+
+Python Practice 10.2 - String Operations
+#multiply txt and add a !
+print( "ni" * 3 + '!')
+
+Python Practice 12.2 - Fun With Exponents
+x = 7
+print(x**3)
+
+Python Practice 14.2 - Product Of Integers
+print(int(input())*int(input()))
+
+Python Practice 14.3 - Multiple Variables
+x = input()
+y = input()
+print(x*int(y))
+
+Code Project 17 - Simple Calculator
+#add 2 integers
+x=int(input())
+y=int(input())
+calculator = (x+y)
+print(calculator)
+///////////////////////////////////////////////////////////////////
+
+Python Practice 19.2 - At The Boiling Point
+temp = int(input())
+if temp >= 100:
+    print('Boiling')
+    
+Python Practice 19.3 - Let's Dance
+#seperate scores into reward attained
+score = int(input())
+if score >= 80:
+    print('certificate')
+if score >= 90:
+    print('admitted')
+    
+Python Practice 19.4 - Ice Cream For Everyone!
+#see if you can afford icecream for all 10 friends
+money = int(input())
+price = int(input())
+total = price*10
+if money >= total:
+    print(money%total)
+    
+Python Practice 20.2 - Club Bouncer Code
+#scan IDs
+age = int(input())
+name = input()
+if age >= 18:
+    print('Welcome ' + name)
+else:
+    print('Sorry')
+    
+Python Practice 20.3 - To Pythagoras, Or Not To...
+side1 = int(input())
+side2 = int(input())
+side3 = int(input())
+if side3**2 == (side1**2 + side2**2):
+    print('Right-angled')
+else:
+    print('Not right-angled')
+
+Python Practice 20.4 - Organized Robot
+#codify colors
+color = input()
+if color == 'red':
+    print('1')
+elif color == 'green':
+    print('2')
+elif color == 'black':
+    print('3')
+
+Python Practice 20.5 - Depending On Parity
+# double evens, triple odds
+number = int(input())
+if number%2 == 0:
+    print(number*2)
+elif number%2 != 0:
+    print(number*3)
+elif number == 0:
+    print(0)
+
+Python Practice 21.2 - Humidity Level
+#check if the humidity is normal
+humidity = int(input())
+if 40 <= humidity <= 60:
+    print('norm')
+
+Python Practice 21.3 - Store is Closed
+#check the store hours for each day
+hour = int(input())
+day = int(input())
+if day in range(1,5):
+    if hour in range(10,21):
+        print('Open')
+    else:
+        print('Closed')
+else:
+    print('Closed')
+
+Python Practice 21.4 - Boolean Age Groups
+#classify ages
+age = int(input())
+if age <= 11:
+    print('Child')
+elif 17 >= age >= 12:
+    print('Teen')
+elif 64 >= age >= 18:
+    print('Adult')
+else:
+    print('Senior')
+
+Python Practice 22.2 - Financial Transactions
+#chain multiple conditions
+card_type = input()
+if (card_type == 'Amex') or (card_type == 'Visa'):
+    print('accepted')
+    
+Python Practice 22.3 - Tuition Discounts
+#
+score1 = int(input())
+score2 = int(input())
+avg_grade = (score1 + score2) / 2
+if (100 >= avg_grade >= 90):
+    print(50)
+elif (89 >= avg_grade >= 80):
+    print(30)
+elif (79 >= avg_grade >= 70):
+    print(10)
+else:
+    print(0)
+
+Python Practice 23.2 - Fruit Vending Machine
+#use index as a vending machine code
+fruits = ["apple", "cherry", "banana", "kiwi", "lemon", "pear", "peach", "avocado"]
+n = int(input())
+if n in range(0,8):
+    print(fruits[n])
+if (n<0) or (n>8):
+    print('Wrong number')
+    
+Python Practice 23.3 - Every Third Character
+#treat a string with it's index
+text = input()
+print(text[2])
+
+Python Practice 24.2 - List Operations
+#replace a number in a list with x
+items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+num = int(input())
+items[num] = 'x'
+print(items)
+
+Python Practice 24.3 - Build A Search Engine
+#simple search in a string
+s = input()
+if 'a' in s:
+    print('Match')
+else:
+    print('No match')
+
+Python Practice 24.4 - Bingo
+#simple search in a list
+items = [42, 88, 721, 12, 43, 22, 908]
+num = int(input())
+if num in items:
+    print('bingo')
+
+Python Practice 25.2 - Queue Management
+#use a list for a queue with .append()
+queue = ["John", "James", "Amy"]
+txt = input()
+queue.append(str(txt))
+print(queue)
+
+Python Practice 25.3 - The Middle Element
+#find the middle elements
+items = [2, 4, 6, 8, 10, 12, 14]
+length = len(items)
+half = length//2
+print(half)
+
+Python Practice 25.4 - Minimum And Maximum
+#sum the max and min of a list
+numbers = [14,5,6,8,17,28] 
+ceiling = max(numbers)
+floor = min(numbers)
+print(ceiling + floor)
+
+Python Practice 26.2 - Let's Do Some Magic
+#magic box doubles items within it everyday
+items = int(input())
+days = int(input())
+print(items*2**days)
+
+Python Practice 26.3 - Call It Even
+#change the code to only print even numbers
+x = 0
+while x <= 10:
+    print(x)
+    x += 2
+
+Python Practice 26.4 - Summing Digits
+#add each digit of a given number 
+num = str(input())
+sum = 0
+for i in num:
+   sum += int(i)
+print(sum)
+
+Python Practice 26.5 - Infinite Loops
+#end the loop when it reads 0
+items = []
+while True:
+    n = int(input())
+    items.append(n)
+    if n == 0:
+        break
+print(items[0:-1])
+
+Python Practice 26.6 - Free Stuff!
+#odd numbers ring up as free
+items = [23, 555, 666, 123, 128, 4242, 990]
+sum = 0
+n = 0
+while n < len(items):
+    num = items[n]
+    n += 1
+    if num%2 == 0:
+        sum += num
+    if num%2 != 0:
+        continue
+print(sum)
+
+Python Practice 27.2 - Iteration
+#sum the list with a loop
+list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+sum = 0
+for nums in list:
+    sum += nums
+print(sum)
+
+Python Practice 28.2 - Date Picker
+#list the dates between two inputs
+a = int(input())
+b = int(input())
+list = []
+for dates in range(a,b):
+    list.append(dates)
+print(list)
+
+Code Project 30 - FizzBuzz
+#(n/3)=Solo, (n/5)=Learn, combo
+n = int(input())
+for x in range(1, n):
+    if x % 2 == 0:
+        continue
+    elif x % 3 == 0 and x % 5 == 0:
+        print("SoloLearn")
+    elif x % 3 == 0:
+        print("Solo")
+    elif x % 5 == 0:
+        print("Learn")
+    else:
+        print(x)
+/////////////////////////////////////////////////////////////////
+ 
+Functions and Modules
+ 
+Python Practice 32.2 - Welcome, Sololearner!
+#personalized welcome message
+def welcome_message():
+	name = input()
+	print("Welcome, " + name)
+welcome_message()
+
+Python Practice 33.2 - Matching Passwords
+#make sure the passwords match
+password = input()
+repeat = input()
+
+def validate(text1, text2):
+	if repeat == password:
+		print('Correct')
+	if repeat != password:
+		print('Wrong')
+
+validate(password, repeat)
+
+Python Practice 33.3 - Area Of A Rectangle
+#declare if it's a square as well
+length = int(input())
+width = int(input())
+def area(length, width):
+	if length != width:
+		print(length*width)
+
+	if length == width:
+		print(length*width)
+		print('Square')
+
+area(length, width)
+
+Python Practice 34.2 - Hashtag Generator
+#turn string input into hastags
+s = input()
+
+def hashtagGen(text):
+	condensed = s.replace(' ', '') 
+	return '#' + condensed
+
+print(hashtagGen(s))
+
+Python Practice 37.2 - No Dice? No Problem
+#use .randint to simulate dice
+import random
+random.seed(int(input()))
+
+dice1 = random.randint(1,6)
+dice2 = random.randint(1,6)
+
+print(dice1)
+print(dice2)
+
+Python Practice 37.3 - Circle Dimensions
+#
+radius = int(input())
+from math import pi	
+
+perimeter = 2*pi*radius
+
+print(round(perimeter, 2))
+
+Code Project 40 - Celsius to Farenheit Converter
+#convert C to F
+celsius = int(input())
+
+def conv(c):
+    f = 9.0/5.0*c+32
+    return f
+
+fahrenheit = conv(celsius)
+print(fahrenheit)
+///////////////////////////////////////////////////////////////////
+
+Exceptions & Files
+
+Python Practice 42.2 - Bank Card PIN System
+#handle the expected errors
+pin = input()
+try:
+	int(pin)
+	print('PIN code is created')
+except ValueError:
+	print('Please enter a number')
+  
+Python Practice 43.2 - Making Coffee
+#coffee vending machine
+coffee = ["Café Latte", "Caffe Americano", "Espresso", "Cappuccino", "Macchiato"]
+choice = int(input())
+
+try:
+	choice in range(0,5)
+	print(coffee[choice])
+except:
+	print('Invalid number')
+finally:
+	print('Have a good day')
+
+Python Practice 47.2 - Getting In Shape
+#read the lines of the file
+file = open("/usercode/files/pull_ups.txt")
+n = int(input())
+lines = file.readlines()
+print(lines[n])
+file.close()
+
+Python Practice 48.2 - New Lines
+#open a file, add a name, check it
+names = ["John", "Oscar", "Jacob"]
+
+file = open("names.txt", "w+")
+for name in names:
+    file.write(name + '\n')
+file.close()
+
+file= open("names.txt", "r")
+print(file.read())
+file.close()
+
+Code Project 51 - Book Titles
+#codify book titles to first letter + total characters
+file = open("/usercode/files/books.txt", "r")
+
+lines = file.readlines()
+n=len(lines)
+for x in lines:
+    if x == lines[n-1]:
+        print(x[0],len(x), sep='')
+    else:
+        print(x[0],len(x)-1, sep='')
+
+file.close()
+/////////////////////////////////////////////////////////////////////
+
+More Types
+
+Python Practice 53.2 - Inventory Management
+store = {"Orange": 2, "Watermelon": 0, "Apple": 8, "Banana": 42}
+print(store['Apple'])
+
+Python Practice 54.2 - Library Management
+books = {
+    "Life of Pi": "Adventure Fiction", 
+    "The Three Musketeers": "Historical Adventure",
+    "Watchmen": "Comics", 
+    "Bird Box": "Horror",
+    "Harry Potter":"Fantasy Fiction",
+    "Good Omens": "Comedy"
+}
+book = input()
+try:
+    print(books[book])
+except KeyError:
+    print('Not found')
+    
+Python Practice 54.3 - Where's The Book?
+books = {
+    "Life of Pi": "Adventure Fiction", 
+    "The Three Musketeers": "Historical Adventure",
+    "Watchmen": "Comics", 
+    "Bird Box": "Horror",
+    "Harry Potter":"Fantasy Fiction",
+    "Good Omens": "Comedy"
+}
+book = input()
+print(books.get(book, "Book not found"))
+
+Python Practice 55.2 - Tuples
+import math
+p1 = (23, -88)
+p2 = (6, 42)
+
+x1 = p1[0]
+x2 = p2[0]
+y1 = p1[1]
+y2 = p2[1]
+
+x_dist = (x1-x2)**2
+y_dist = (y1-y2)**2
+
+dist = math.sqrt(x_dist + y_dist)
+print(dist)
+
+Python Practice 56.2 - List Slices
+x = input()
+elements = x.split()
+print(elements[-1])
+
+Python Practice 57.2 - List Of Multiples
+x = int(input()) 
+list = []
+for x in range(0,x):
+    if x%3 == 0 and x%5 ==0:
+        list.append(x)
+    else:
+        continue
+print(list)
+
+Python Practice 58.2 - Names And Ages
+name = input()
+age = int(input())
+print(name + ' is ' + str(age) + ' years old')
+
+Python Practice 59.2 - Broken Keyboard
+txt = input()
+print(txt.replace('#', ' '))
+
+Python Practice 60.2 - How Many Words?
+txt = input()
+s = txt.split()
+print(len(s))
+
+Code Project 62 - Longest Word
+#find the longest word in a string
+txt = input()
+word = max(txt.split(' '), key=len)
+print(word)
+///////////////////////////////////////////////////////////////
+
+Functional Programming
+
+Python Practice 64.2 - Lambdas
+#calculate the cube of a number
+x = int(input())
+y = (lambda z:z**3)(x)
+print(y)
+
+Python Practice 65.2 - How Old Will They Be?
+#calculate the age of people in a certain years
+birth_years = [1995, 2004, 2019, 1988, 1977, 1902]
+result = list(map(lambda x: 2050-x, birth_years))
+print(result)
+
+Python Practice 65.3 - Filtering
+#output the names >5 characters
+names = ["David", "John", "Annabelle", "Johnathan", "Veronica"]
+print(list(filter(lambda x: (len(x)>5), names)))
+
+Python Practice 66.2 - Split Generator
+#make a generator to split a string into seperate words
+txt = input()
+def words(txt):
+    for word in txt.split(' '):
+        yield word
+print(list(words(txt)))
+
+Python Practice 67.2 - Bill Printing
+#add a decorator
+def decor(func):
+    def wrap():
+        print('###')
+        func()
+        print('###')
+    return wrap
+
+def print_bill():
+    print("BILL DATA GOES HERE")
+
+print_bill = decor(print_bill)
+print_bill()
+
+Python Practice 67.3 - Uppercasing
+#add another decorator
+text = input()
+
+def uppercase_decorator(func):
+    def wrapper(text):
+        return func(text).upper()
+    return wrapper
+    
+@uppercase_decorator    
+def display_text(text):
+    return(text)
+    
+print(display_text(text))
+
+Python Practice 68.2 - Fun With Math
+#use recursion to calculate the sum of the squares
+def calc(list):
+    if len(list)==0:
+        return 0
+    else:
+        return list[0]**2 + calc(list[1:]) 
+list = [1, 3, 4, 2, 5]
+x = calc(list)        
+print(x)
+
+Python Practice 69.2 - Commonality
+#combine sets to find the like characters
+set1 = {2, 4, 5, 6}  
+set2 = {4, 6, 7, 8, 11, 42, 2}  
+print(set1 & set2)
+
+Python Practice 70.2 - Ordering
+#find all possible combinations
+from itertools import permutations
+items = ['x', 'y']
+p = list(permutations(items))
+print(p)
+
+Code Project 72 - Fibonacci
+#sum of the 2 numbers that proceeds it.
+num = int(input())
+
+def fibonacci(n):
+	if n <= 1:
+		return n
+	else:
+		return(fibonacci(n-1) + fibonacci(n-2))
+   
+if num <= 0:
+   print("Please enter a positive integer")
+else:
+   for i in range(num):
+       print(fibonacci(i))
+/////////////////////////////////////////////////////////////////////
+
+OOP
+
+Python Practice 73.2 - Student Class
+#student class greeting
+class Student:
+    def __init__(self, name):
+        self.name = name
+    
+    def greet(self):
+        print(self.name+" says hi")
+
+obj = Student("John")
+obj.greet()
+
+Python Practice 73.3 - Calculating Volume
+#rectangle volume with a class program
+class Rectangle:
+    def __init__(self, width, height):
+        self.w = width
+        self.h = height
+    def vol(self, width, height):
+        return (width*height)
+        
+w = int(input())
+h = int(input())
+
+obj = Rectangle(w, h)
+print(obj.vol(w,h))
+
+Python Practice 74.2 - Fun With Classes
+#car inherits vehicle class
+class Vehicle: 
+    def horn(self):
+        print("Beep!")
+
+class Car(Vehicle):
+    def __init__(self, name, color):
+        self.name = name
+        self.color = color
+
+obj = Car("BMW", "red")
+obj.horn()
+
+Python Practice 75.2 - Bank Accounts
+#utilizing __add__
+class BankAccount:
+    def __init__(self, balance):
+        self.balance = balance
+    
+    def __add__(self, other):
+        return BankAccount(self.balance + other.balance)
+
+a = BankAccount(1024)
+b = BankAccount(42)
+result = a + b
+print(result.balance)
+
+Python Practice 77.2 - Making A Deposit
+#data hiding
+class BankAccount:
+    def __init__(self, balance):
+        self._balance = balance
+
+    def __repr__(self):
+         return "Account Balance: {}".format(self._balance)
+    
+    def deposit(self, amount):
+        self._balance += amount
+
+acc = BankAccount(0)
+acc.deposit(int(input()))
+print(acc)
+
+Python Practice 78.2 - Static Method
+#utilize @staticmethod
+class Calculator:
+    @staticmethod
+    def add(a,b):
+        return a+b
+        
+n1 = int(input())
+n2 = int(input())
+print(Calculator.add(n1, n2))
+
+Python Practice 79.2 - Property Values
+#checking even or odd
+class Number:
+    def __init__(self, num):
+        self.value = num
+        
+    @property
+    def isEven(self):
+        if self.value % 2 == 0:
+            return True
+        else:
+            return False
+
+x = Number(int(input()))
+print(x.isEven)
+
+Code Project 82 - Juice Maker
+#combining jucie types and quantities through classes
+class Juice:
+    def __init__(self, name, capacity):
+        self.name = name
+        self.capacity = capacity
+
+    def __str__(self):
+        return (self.name + ' ('+str(self.capacity)+'L)')
+
+    def __add__(a,b):
+        print(a.name + '&' + b.name , ' (', a.capacity + b.capacity, 'L)', sep='')
+
+a = Juice('Orange', 1.5)
+b = Juice('Apple', 2.0)
+result = a + b
+/////////////////////////////////////////////////////////////////////
+
+Regular Expressions
+
+Python Practice 83.2 - Word Games
+#match words that start with 'gl'
+import re
+word = input()
+if re.match('gl', word):
+    print('Match')
+else:
+    print('No match')
+    
+Python Practice 83.3 - Always Do Your Best
+#check the number of times a given word appears
+import re
+quote = "Always do your best. Your best is going to change from moment to moment; it will be different when you are healthy as opposed to sick. Under any circumstance, simply do your best, and you will avoid self-judgment, self-abuse and regret"
+
+word = input()
+count = len(re.findall(word, quote))
+print(count)
+
+Python Practice 83.4 - Contacts Database
+#clean up phone numbers
+import re
+number = input()
+clean = re.sub(r'^00', '+', number)
+print(clean)
+
+Python Practice 84.2 - Starts With Ends With
+#match words with 4 letters, start with m, end with e
+import re
+word = input()
+pattern = r'^m..e$'
+
+if re.match(pattern, word):
+    print('Match')
+else:
+    print('No match')
+    
+Python Practice 85.2 - Online Shop Search
+#search through IDs AA00
+import re
+Id = input()
+pattern = r'[A-Z][A-Z][0-9][0-9]$'
+if re.search(pattern, Id):
+    print('Searching')
+else:
+    print('Wrong format')
+    
+Python Practice 86.2 - Authentication!
+#make a program that requires PWs to have 1 upper and 1 number
+import re
+password = input()
+pattern = r'[A-Z][0-9]*'
+if re.search(pattern, password):
+    print('Password created')
+else:
+    print('Wrong format')
+    
+Python Practice 88.2 - Social Media Pro
+#add hastag to keywords
+import re
+text = input()
+words = re.findall(r'#\w+', text)
+print('\n'.join(words))
+
+Code Project 91 - Phone Number Validator
+#check a phone number to be 8 digits and start with 1,8,9
+import re
+number = str(input())
+pattern = r'1|8|9{1}[0-9]'
+if re.match(pattern, number) and len(number) == 8:
+    print('Valid')
+else:
+    print('Invalid')
+////////////////////////////////////////////////////////////////////////
+
+Pythonicness & Packaging
+
+Python Practice 94.2 - Infinite Sum
+#use *args to increase the arguments accepted
+def adder(x, *args):
+    print(x+sum(args))
+
+adder(2, 3)
+adder(2, 3, 4)
+adder(1, 2, 3, 4, 5)
+
+Python Practice 94.3 - Egg Sandwich!
+#add default choices to booking options
+def book(people, days, breakfast='Egg Sandwiches'):
+	print("People:", people)
+	print("Days:", days)
+	print("Breakfast:", breakfast)
+
+book(5,3, "Peanut Butter Bites")
+book(4,5)
+
+Python Practice 96.2 - Give Me My Money
+#ternary operator for ATM withdrawls
+balance = int(input())
+to_cash = int(input())
+money_left = balance-to_cash if to_cash<=balance and to_cash >=500 else "Error"
+
+print(money_left)
+
+Python Practice 97.2 - Too Young To Ride
+#while loop groups of 3 to weed out kids <16
+ages = []
+i = 0
+while i<3:
+   age = int(input())
+   ages.append(age)
+   if min(ages) <16:
+      print('Too young!')
+      break
+   i+=1
+else:
+   print('Get ready!')
+   
+Python Practice 97.3 - Bon Appetit!
+#online ordering can only use digits
+code = input()
+try:
+    int(code)
+    print('Order accepted')
+except ValueError:
+    print('Enter only digits')
+else:
+    print('Bon appetit')
+    
+Code Project 103 - Adding Words
+#concatenate multiple arguements into a string
+def concatenate(*args):
+    mod = None
+    for i in args:
+        if mod == None:
+            mod = i
+        else:            
+            mod += '-' + i
+    return mod
+print(concatenate("I", "love", "Python", "!"))
