@@ -1,0 +1,137 @@
+Machine Learning With Python
+
+The Basics 
+Code Project 10 - What's In A Column
+#get the elements in a given column
+
+filename = input()
+column_name = input()
+
+import pandas as pd
+import numpy as np
+
+df = pd.read_csv(filename)
+arr = df[column_name].values
+
+print(arr)
+//////////////////////////////////////////////////////////////////
+
+
+Classification
+Code Project 17 - Bob The Builder
+#predict a point using a log regression
+
+n = int(input())
+X = []
+for i in range(n):
+    X.append([float(x) for x in input().split()])
+y = [int(x) for x in input().split()]
+datapoint = [float(x) for x in input().split()]
+
+import numpy as np
+from sklearn.linear_model import LogisticRegression
+
+model = LogisticRegression()
+model.fit(X,y)
+
+datapoint = np.array(datapoint).reshape(1,-1)
+
+print(model.predict(datapoint[[0]])[0])
+////////////////////////////////////////////////////////////////////
+
+
+Model Evaluation
+Code Project 28 - Welcome to the Matrix
+#calculate accuracy, precision, recall, f1 from a confusion matrix
+
+n = int(input())
+X = []
+for i in range(n):
+    X.append([float(x) for x in input().split()])
+y = [int(x) for x in input().split()]
+datapoint = [float(x) for x in input().split()]
+
+import numpy as np
+from sklearn.linear_model import LogisticRegression
+
+model = LogisticRegression()
+model.fit(X,y)
+
+datapoint = np.array(datapoint).reshape(1,-1)
+
+print(model.predict(datapoint[[0]])[0])
+////////////////////////////////////////////////////////////////////////
+
+
+Decision Tree Model
+Code Project 37 - Split to Achieve Gain
+#calculate info gained through Gini Impurity
+
+S = [int(x) for x in input().split()]
+A = [int(x) for x in input().split()]
+B = [int(x) for x in input().split()]
+
+#Lengths
+S_length = len(S)
+A_length = len(A)
+B_length = len(B)
+
+#Initial
+giniS = S.count(0)/(S.count(0)+S.count(1))
+giniInitial = 2*giniS*(1-giniS)
+
+#Left
+giniA = A.count(0)/(A.count(0)+A.count(1))
+giniLeft = 2*giniA*(1-giniA)
+
+#Right
+giniB = B.count(0)/(B.count(0)+B.count(1))
+giniRight = 2*giniB*(1-giniB)
+
+#Info Gained
+giniInfo = giniInitial - (giniLeft*(A_length/S_length))-(giniRight*(B_length/S_length))
+print(round(giniInfo,5))
+////////////////////////////////////////////////////////////////////////
+
+
+Random Forest
+Code Project 44 - A Forest of Trees
+#split the data into training and test sets with random states
+
+import numpy as np
+random_state = int(input())
+n = int(input())
+rows = []
+for i in range(n):
+    rows.append([float(a) for a in input().split()])
+
+X = np.array(rows)
+y = np.array([int(a) for a in input().split()])
+
+import pandas as pd
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
+
+X_train, X_test, y_train, y_test = train_test_split(X,y, random_state=random_state)
+
+rf = RandomForestClassifier(n_estimators=5, random_state=random_state)
+
+rf.fit(X_train, y_train)
+
+print(rf.predict(X_test))
+//////////////////////////////////////////////////////////////////////////
+
+
+Neural Networks
+Code Project 54 - The Sigmoid Function
+#compute output of the node with sigmoid as the activation function 
+
+w1, w2, b, x1, x2 = [float(x) for x in input().split()]
+
+from math import e
+
+node = w1*x1 + w2*x2 + b
+sig = 1-(1/(1+e**node))
+
+print(round(sig,4))
+///////////////////////////////////////////////////////////////////////////
