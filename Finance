@@ -1,0 +1,64 @@
+Python for Finance
+
+
+Python in Finance
+
+
+Python Practice 2.2 - Your First Program
+print('Python is fun')
+
+
+Python Practice 3.2 - Fun With Exponents
+x = 7
+print(x**3)
+
+
+Python Practice 4.2 - The Math Package
+x = 5776
+import math
+print(math.sqrt(x))
+////////////////////////////////////////////////////////////////
+
+
+Cumulative Finance Porject - Tracking BitCoin
+#a multi-step project to track, graph, and calculate BTC investments 
+
+import numpy as np
+import numpy_financial as npf
+import matplotlib.pyplot as plt
+import yfinance as yf
+import statistics as stats
+
+#Bitcoin Price 2018-2021 - Part 1.1
+#bitcoin = [3869.47, 7188.46, 22203.31, 29391.78]
+#price_std = np.std(bitcoin)
+#print(price_std)
+
+#revenue from mining farm - Part 1.2
+#revenue = [-500000, 3869.47*10, 7188.46*10, 22203.31*10, 29391.78*10]
+#print(npf.irr(revenue))
+
+#investment growth chart - Part 2.1
+#years = ['2018', '2019', '2020', '2021']
+#initial_BTC_pct = (1000/3869.47)*100
+#investment_growth = np.multiply(bitcoin, initial_BTC_pct)
+#BTC = plt.plot(years, investment_growth)
+#plt.savefig('plot.png')
+
+#Bitcoin Price from Yahoo - Part 3
+data = yf.Ticker('BTC-USD')
+x = data.history('1y')['Close']
+initial = 1000/x[0]
+y = np.multiply(initial, x)
+plt.plot(y)
+plt.savefig('plot.png')
+
+#Bitcoin volatility, pct risk, Sharpe Ratio
+z = yf.download('BTC-USD', start='2020-01-01')
+volatility = z['Close'].rolling(365).std()
+risk = volatility * np.sqrt(365)
+print('Risk', risk[-1]) 
+
+#sharpe = returns -risk / std
+sharpe = (np.mean(z) / np.std(z)) * np.sqrt(252)
+print('Sharpe', sharpe['Open'])
